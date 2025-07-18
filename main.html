@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extra Marks</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- fonts css -->
+    <link rel="stylesheet" href="main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- swipper css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+    <!-- container -->
+    <div class="container">
+
+        <!-- Modal signup login -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-center">
+                <div class="modal-content content-background cardform">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close close-button" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <!-- Toggle Buttons -->
+                        <div class="switch-tabs">
+                            <button id="signup-tab" class="active">Sign up</button>
+                            <button id="login-tab" class="inactive">Log in</button>
+                        </div>
+
+                        <!-- Sign Up Form -->
+                        <div id="signup-form" class="form-box active">
+                            <h2>Create an account</h2>
+                            <input type="text" id="signup-username" placeholder="Username" />
+                            <input type="email" id="signup-email" placeholder="Enter your email" />
+                            <input type="password" id="signup-password" placeholder="Enter your password" />
+                            <button class="submit-btn" id="signup-submit">Create an account</button>
+                        </div>
+
+                        <!-- Log In Form -->
+                        <div id="login-form" class="form-box" style="display: none;">
+                            <h2>Log in to your account</h2>
+                            <input type="email" id="login-email" placeholder="Enter your email" />
+                            <input type="password" id="login-password" placeholder="Enter your password" />
+                            <button class="submit-btn" id="login-submit">Log in</button>
+                        </div>
+
+                        <!-- Divider & Social -->
+                        <div class="divider">OR SIGN IN WITH</div>
+                        <div class="social-buttons">
+                            <button><img
+                                    src="data:image/png;base64,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"
+                                    alt="google-logo"></button>
+                        </div>
+
+                        <!-- Footer Text -->
+                        <div class="footer-text" id="footer-text">
+                            Already have an account? <a href="#" id="switch-to-login">Log in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- navigation bar -->
+        <div class="navigation" data-aos="fade-down">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="images/logo.png" href="#" alt="Bootstrap" width="120" height="60">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse nav-bar-gap" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-left">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Online Course</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Online Test</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Contact Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">About Us</a>
+                            </li>
+
+                        </ul>
+                        <!-- modal button -->
+                        <div class="d-flex nav-right" role="search">
+                            <button class="btn btn-outline-success" type="button" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Login
+                            </button>
+                            <button class="btn btn-outline-success" type="button" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Register
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- main-page -->
+        <div class="main-page">
+            <div id="carouselExample" class="carousel slide carousel-slide carousel-fade">
+                <div class="carousel-inner">
+                    <div class="carousel-item active active-height">
+                        <!-- slide-1 -->
+                        <div class="first-slide">
+                            <div class="first-slide-left" data-aos="fade-up">
+                                <h2>Welcome to the AI <img src="images/classroom.png" alt="classroom" width="250"
+                                        height="70"> </h2>
+                                <p>Empowering the next generation of innovators with cutting-edge technology and
+                                    interactive
+                                    learning
+                                    experiences. Discover, build, and transform your future with us.</p>
+                                <button class="btn btn-outline-success fst-btn" type="submit">Book Now</button>
+                            </div>
+                            <div class="first-slide-right" data-aos="fade-up">
+                                <dotlottie-wc class="slide-animation"
+                                    src="https://lottie.host/b4168ed8-6afe-4982-9382-2192202f134d/TUqLYCHRcf.lottie"
+                                    speed="1" autoplay loop></dotlottie-wc>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide-2 -->
+                    <div class="carousel-item active-height">
+                        <div class="second-slide">
+                            <div class="second-slide-left">
+                                <img class="logo2" src="images/logo2.png">
+                                <p>Learn What You Want, When You Want, Where You Want</p>
+                                <button type="button" class="btn btn-warning snd-btn">Book Now</button>
+                            </div>
+                            <div class="first-slide-right">
+                                <img class="slide-image" src="images/smartclass.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item active-height">
+                        <div class="third-slide">
+                            <div class="third-slide-left">
+                                <img class="logo2" src="images/logo2.png">
+                                <p>A Platform Where Technology Meets Innovation</p>
+                                <button type="button" class="btn btn-warning snd-btn">Book Now</button>
+                            </div>
+                            <div class="third-slide-right">
+                                <img class="third-slide-image" src="images/learningboy.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+        </div>
+        <!-- second-page -->
+        <div class="second-page">
+            <h2 data-aos="fade-up">Pioneering Next-gen Education
+                with AI-based Solutions</h2>
+            <p>Discover the latest upgrades for students, schools, & teachers</p>
+
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"><img src="images/Character Design/1.png"></div>
+                    <div class="swiper-slide"><img src="images/Character Design/2.png"></div>
+                    <div class="swiper-slide"><img src="images/Character Design/3.png"></div>
+                    <div class="swiper-slide"><img src="images/Character Design/4.png"></div>
+                    <div class="swiper-slide"><img src="images/Character Design/5.png"></div>
+                    <div class="swiper-slide"><img src="images/Character Design/6.png"></div>
+                    <div class="swiper-slide"><img src="images/Character Design/7.png"></div>
+                    <div class="swiper-slide"><img src="images/Character Design/8.png"></div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+
+        <!--why choose us-->
+        <div class="fourth-page">
+            <div class="fourth-left">
+                <h2 style="color: white;" data-aos="fade-up">
+                    Why Choose Us
+                    <i class="fa-solid fa-question " style="color: #9E60F7;"></i>
+                </h2>
+                <dotlottie-wc data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"
+                    src="https://lottie.host/1addf11b-2da7-4ae6-a9f7-9b342401d869/8YtBUTOsm9.lottie"
+                    class="fourth-animation" speed="1" autoplay loop></dotlottie-wc>
+            </div>
+            <div class="fourth-right">
+                <div class="row1">
+                    <div class="card" data-aos="flip-left">
+                        <div class="card-left">
+                            <i class="fa-solid fa-pen" style="color: #94b7f5;"></i>
+                        </div>
+                        <div class="card-right">
+                            <h3>Online Tests</h3>
+                            <p class="count" data-target="10000">0</p>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="flip-left">
+                        <div class="card-left">
+                            <i class="fa-solid fa-chalkboard-user" style="color: #74C0FC;"></i>
+                        </div>
+                        <div class="card-right">
+                            <h3>Teachers</h3>
+                            <p class="count" data-target="999">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row2">
+                    <div class="card" data-aos="flip-left">
+                        <div class="card-left">
+                            <i class="fa-solid fa-graduation-cap" style="color: #63E6BE;"></i>
+                        </div>
+                        <div class="card-right">
+                            <h3>Students</h3>
+                            <p class="count" data-target="17000">0</p>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="flip-left">
+                        <div class="card-left">
+                            <i class="fa-regular fa-circle-question" style="color: #c7f8c4;"></i>
+                        </div>
+                        <div class="card-right">
+                            <h3>Questions</h3>
+                            <p class="count" data-target="9199">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row3">
+                    <div class="card" data-aos="flip-left">
+                        <div class="card-left">
+                            <i class="fa-solid fa-laptop-code fa-2xl" style="color: #B197FC;"></i>
+                        </div>
+                        <div class="card-right">
+                            <h3>Lectures</h3>
+                            <p class="count" data-target="1000">0</p>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="flip-left">
+                        <div class="card-left">
+                            <i class="fa-solid fa-chalkboard-user fa-2xl" style="color: #74C0FC;"></i>
+                        </div>
+                        <div class="card-right">
+                            <h3>Videos</h3>
+                            <p class="count" data-target="90000">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--what we offer -->
+        <section class="offer-section">
+            <h2 data-text="What We Offer" class="head-offer" data-aos="fade-up">What We Offer</h2>
+            <div class="offer-content">
+                <div class="offer-left">
+                    <div class="offer-card red" data-aos="flip-up">
+                        <i class="fas fa-chalkboard-teacher" style="color: #f44336;"></i>
+                        <h3>Live Lectures</h3>
+                        <p>Interactive live lectures for competitive exam preparation.</p>
+                    </div>
+                    <div class="offer-card blue" data-aos="flip-up">
+                        <i class="fas fa-laptop-code" style="color: #2196f3;"></i>
+                        <h3>Online Tests</h3>
+                        <p>Interactive online tests for exam preparation.</p>
+                    </div>
+                </div>
+                <div class="offer-center" data-aos="zoom-out">
+                    <img src="images/character.png" alt="Student" />
+                </div>
+                <div class="offer-right">
+                    <div class="offer-card purple" data-aos="flip-up">
+                        <i class="fas fa-play-circle" style="color: #9c27b0;"></i>
+                        <h3>Recorded Lectures</h3>
+                        <p>Recorded lectures for exam preparation.</p>
+                    </div>
+                    <div class="offer-card orange" data-aos="flip-up">
+                        <i class="fas fa-file-alt" style="color: #ff9800;"></i>
+
+                        <h3>Study Materials</h3>
+                        <p>Study materials for competitive exam preparation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--sponsors -->
+        <div class="sponsors">
+            <h2 class="text-center" data-aos="fade-up">Our Trusted Partners</h2>
+            <div class="marquee-container">
+                <div class="parents">
+                    <div class="school-card">
+                        <img src="images/sponsor/school.png" alt="Modern School">
+                    </div>
+                    <div class="school-card">
+                        <img src="images/sponsor/search.png" alt="Modern School">
+                    </div>
+                    <div class="school-card">
+                        <img src="images/sponsor/ui.png" alt="Modern School">
+                    </div>
+                    <div class="school-card">
+                        <img src="images/sponsor/ux.png" alt="Modern School">
+                    </div>
+                    <div class="school-card">
+                        <img src="images/sponsor/google-play.png" alt="Modern School">
+                    </div>
+                    <div class="school-card">
+                        <img src="images/sponsor/whatsapp.png" alt="Modern School">
+                    </div>
+                    <!-- <dublicate slides -->
+                    <div class="school-card">
+                        <img src="images/sponsor/school.png" alt="Modern School">
+                    </div>
+                    <div class="school-card">
+                        <img src="images/sponsor/search.png" alt="Modern School">
+                    </div>
+                    <div class="school-card">
+                        <img src="images/sponsor/ui.png" alt="Modern School">
+                    </div>
+                    <div class="school-card">
+                        <img src="images/sponsor/ux.png" alt="Modern School">
+                    </div>
+                    <div class="school-card">
+                        <img src="images/sponsor/google-play.png" alt="Modern School">
+                    </div>
+                    <div class="school-card">
+                        <img src="images/sponsor/whatsapp.png" alt="Modern School">
+                    </div>
+                    <div class="school-card">
+                        <img src="images/sponsor/school.png" alt="Modern School">
+                    </div>
+                    <div class="school-card">
+                        <img src="images/sponsor/search.png" alt="Modern School">
+                    </div>
+                    <div class="school-card">
+                        <img src="images/sponsor/google-play.png" alt="Modern School">
+                    </div>
+                    <div class="school-card">
+                        <img src="images/sponsor/whatsapp.png" alt="Modern School">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- our acheivements -->
+        <div class="fifth-page">
+            <h2 data-aos="fade-up">Celebrating Achievements<img data-aos="flip-right" class="trophy"
+                    src="images/trophy.png"></h2>
+            <p class="intro">Inspiring stories from Extramarks community</p>
+
+            <div class="parent">
+                <div class="div1">
+                    <div class="card" data-aos="flip-right" style="width: 20rem;">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/EaG3Zd04W5s" title="YouTube video player"
+                                allowfullscreen
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+                            </iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card’s content.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="div2">
+                    <div class="card" data-aos="flip-right" style="width: 20rem;">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/EaG3Zd04W5s" title="YouTube video player"
+                                allowfullscreen
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+                            </iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card’s content.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="div3">
+                    <div class="card" data-aos="flip-right" style="width: 20rem;">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/EaG3Zd04W5s" title="YouTube video player"
+                                allowfullscreen
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+                            </iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card’s content.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="div4">
+                    <div class="card" data-aos="flip-right" style="width: 20rem;">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/EaG3Zd04W5s" title="YouTube video player"
+                                allowfullscreen
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+                            </iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card’s content.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="div5">
+                    <div class="card" data-aos="flip-right" style="width: 20rem;">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/EaG3Zd04W5s" title="YouTube video player"
+                                allowfullscreen
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+                            </iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card’s content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="div6">
+                    <div class="card" data-aos="flip-right" style="width: 20rem;">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/EaG3Zd04W5s" title="YouTube video player"
+                                allowfullscreen
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+                            </iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card’s content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--footer-->
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Schools</h5>
+                    <ul>
+                        <li><a href="#">Smart Class Plus</a></li>
+                        <li><a href="#">Assessment Centre</a></li>
+                        <li><a href="#">School Integrated Program</a></li>
+                        <li><a href="#">Learning App</a></li>
+                        <li><a href="#">Parent App</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Students</h5>
+                    <ul>
+                        <li><a href="#">K-12</a></li>
+                        <li><a href="#">NEET</a></li>
+                        <li><a href="#">JEE</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Teachers</h5>
+                    <ul>
+                        <li><a href="#">Teaching App</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Terms & Conditions</h5>
+                    <ul>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Child Safety</a></li>
+                        <li><a href="#">E-waste Recycling Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Resources</h5>
+                    <ul>
+                        <li><a href="#">Newsletter</a></li>
+                        <li><a href="#">Blogs</a></li>
+                        <li><a href="#">NEP 2020</a></li>
+                        <li><a href="#">Webinars</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-apps">
+                <p>Download App</p>
+                <div class="app-buttons">
+                    <a href="#"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                            alt="Google Play" /></a>
+                    <a href="#"><img
+                            src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                            alt="App Store" /></a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Copyright © 2025 Extramarks. All rights reserved.</p>
+                <p>📞 1800-102-5301</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Bootstrap JS with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Firebase App (core) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <!-- Firebase Auth -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+
+
+
+</body>
+
+</html>
