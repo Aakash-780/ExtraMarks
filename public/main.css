@@ -9,7 +9,6 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: black;
     color: black;
-    ;
     line-height: 1.6;
     scroll-behavior: smooth;
 }
@@ -29,6 +28,11 @@ body {
     -webkit-backdrop-filter: blur(15px);
     padding: 10px 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+    width: 120px;
+    height: 60px;
 }
 
 .nav-item {
@@ -119,6 +123,11 @@ body {
     height: 100vh !important;
 }
 
+.classroom {
+    width: 250px;
+    height: 70px;
+}
+
 .first-slide {
     background-image: url("images/Untitled design.png");
     background-size: cover;
@@ -182,10 +191,14 @@ body {
 
 .first-slide-left h2,
 .second-slide-left h2 {
-    font-size: 48px;
+    font-size: 52px;
     margin-bottom: 20px;
     font-weight: bolder;
     font-family: 'Montserrat', sans-serif;
+}
+
+.first-slide-left h2 {
+    text-align: left;
 }
 
 .fst-btn {
@@ -315,7 +328,7 @@ body {
     align-items: center;
     padding-top: 50px;
     background-color: black;
-    color:white;
+    color: white;
     width: 100%;
     gap: 30px;
     padding-top: 100px;
@@ -364,8 +377,8 @@ body {
     padding: 60px 20px;
     /* background-image: url("images/background3.png"); */
     background-size: 800px;
-    background-color:black;
-    color:white;
+    background-color: black;
+    color: white;
     background-repeat: no-repeat;
     background-position: center;
     padding-top: 100px;
@@ -392,6 +405,10 @@ body {
     padding-bottom: 50px;
 }
 
+.fourth-animation-sm {
+    display: none;
+}
+
 /* Left and right columns */
 .offer-left,
 .offer-right {
@@ -408,13 +425,18 @@ body {
 
 /* Card styling */
 .offer-card {
-    background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+    background: rgba(255, 255, 255, 0.15);
+    /* Semi-transparent white */
     border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Softer, deeper shadow */
-    backdrop-filter: blur(12px); /* The glass blur effect */
-    -webkit-backdrop-filter: blur(12px); /* Safari support */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    /* Softer, deeper shadow */
+    backdrop-filter: blur(12px);
+    /* The glass blur effect */
+    -webkit-backdrop-filter: blur(12px);
+    /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Subtle border */
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: left;
 }
@@ -433,9 +455,11 @@ body {
 
 .offer-card p {
     font-size: 14px;
-    color:  #9E60F7;
+    color: #9E60F7;
     margin: 0;
+    width: 30ch;
 }
+
 
 .offer-card:hover {
     transform: translateY(-5px);
@@ -468,7 +492,8 @@ body {
     color: white;
     position: relative;
     transition: color 0.5s;
-    display: inline-block; /* Needed for underline to wrap text */
+    display: inline-block;
+    /* Needed for underline to wrap text */
     padding-bottom: 5px;
 }
 
@@ -496,7 +521,8 @@ body {
 .offer-section h2::before {
     content: "";
     position: absolute;
-    top: 100%; /* right below text */
+    top: 100%;
+    /* right below text */
     left: 50%;
     width: 0;
     height: 2px;
@@ -610,6 +636,11 @@ body {
     height: 500px;
 }
 
+.fourth-page-sm {
+    display: none;
+}
+
+
 /* our achivements */
 .fifth-page {
     display: flex;
@@ -624,16 +655,19 @@ body {
 
 .fifth-page h2 {
     font-size: 4rem;
-    color:white;
+    color: white;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
-.card-text{
-    color:white;
+
+.card-text {
+    color: white;
 }
-.card-title{
-    color:white;
+
+.card-title {
+    color: white;
 }
+
 .trophy {
     width: 100px;
     height: auto;
@@ -1033,13 +1067,381 @@ input::placeholder {
     background: transparent var(--bs-btn-close-bg) center / 2em auto no-repeat;
 }
 
-
-.modal-center{
+.modal-center {
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
 }
 
+@media (max-width: 768px) {
 
+    .div1 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
 
+    .div2 {
+        grid-area: 1 / 2 / 2 / 3;
+    }
 
+    .div3 {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .div4 {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+    .div5 {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+
+    .div6 {
+        grid-area: 3 / 2 / 4 / 3;
+    }
+
+    .parent {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .first-slide-left p {
+        font-size: 12px;
+    }
+
+    .first-slide-left h2 {
+        font-size: 28px;
+        text-align: left;
+    }
+
+    .classroom {
+        width: 120px;
+        height: 35px;
+    }
+
+    .first-slide-left {
+        gap: 10px;
+        padding-left: 77px;
+    }
+
+    .fst-btn {
+        width: 104px;
+        height: 39px;
+        font-weight: bolder;
+        font-size: 10px;
+    }
+
+    .logo {
+        width: 95px;
+        height: 50px;
+    }
+
+    .second-page {
+        padding-top: 50px;
+        gap: 15px;
+        padding-bottom: 10px;
+    }
+
+    .second-page h2 {
+        font-size: 2rem;
+    }
+
+    .second-page p {
+        font-size: 1rem;
+    }
+
+    .offer-section {
+        padding-top: 50px;
+    }
+
+    .offer-section h2 {
+        font-size: 2rem;
+    }
+
+    .offer-center img {
+        display: none;
+    }
+
+    .fourth-animation-sm {
+        display: block;
+    }
+
+    .fourth-animation-sm {
+        width: 600px;
+        height: 300px;
+    }
+
+    .school-card img {
+        width: 40px;
+        height: auto;
+        margin-bottom: 0px;
+    }
+
+    .text-center {
+        font-size: 2rem;
+    }
+
+    .fifth-page h2 {
+        font-size: 2rem;
+    }
+
+    .trophy {
+        width: 60px;
+        height: auto;
+        margin-bottom: 24px;
+    }
+
+    .intro {
+        font-size: 1rem;
+        padding-bottom: 30px;
+    }
+
+    .footer-top {
+        display: none;
+    }
+
+    .offer-left,
+    .offer-right {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .offer-card {
+        padding: 20px;
+    }
+
+    .offer-content {
+        padding-top: 10px;
+        padding-bottom: 50px;
+    }
+
+    .offer-card h3 {
+        font-size: 1rem;
+    }
+
+    .fourth-page-sm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        background-image: url("images/Untitled design.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 25px;
+    }
+
+    .fourth-page {
+        display: none;
+    }
+
+    .fourth-left h2 {
+        font-size: 2rem;
+        padding-top: 30px;
+    }
+
+    .card-right h3 {
+        font-size: 1.5rem;
+    }
+
+    .card-right p {
+        font-size: 1.2rem;
+    }
+
+    .card {
+        padding: 15px;
+        width: 210px;
+    }
+
+    .classroom {
+        width: 100px;
+        height: 30px;
+    }
+
+    .first-slide-left h2 {
+        font-size: 19px;
+        text-align: left;
+    }
+
+    .first-slide-left p {
+        font-size: 10px;
+    }
+
+    .first-slide-left {
+        gap: 5px;
+        padding-left: 60px;
+    }
+
+    .second-page h2 {
+        font-size: 1.5rem;
+    }
+
+    .card-left i {
+        font-size: 1.5rem;
+    }
+
+    .card-right h3 {
+        font-size: 1.3rem;
+    }
+
+    .card {
+        padding: 10px;
+        width: 170px;
+    }
+
+    .school-card img {
+        width: 35px;
+    }
+
+    .school-card {
+        width: 120px;
+    }
+
+    .fifth-page h2 {
+        font-size: 1.5rem;
+    }
+
+    .trophy {
+        width: 42px;
+    }
+
+    .intro {
+        font-size: 0.9rem;
+    }
+
+    .slide-image {
+        width: 400px;
+        height: 200px;
+    }
+
+    .logo2 {
+        width: 100px;
+        height: 50px;
+    }
+
+    .second-slide-left p {
+        font-size: 20px;
+    }
+
+    .second-slide-left {
+        padding-left: 10px;
+        gap: 25px;
+    }
+
+    .second-slide-left p {
+        font-size: 10px;
+        width: 32ch;
+    }
+
+}
+
+@media (max-width: 565px) {
+    .offer-content {
+        flex-wrap: nowrap;
+    }
+
+    .offer-left,
+    .offer-right {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .offer-card {
+        padding: 16px;
+    }
+
+    .offer-card p {
+        width: 25ch;
+    }
+
+    .second-page p {
+        font-size: 0.8rem;
+    }
+
+    .offer-section {
+        padding-bottom: 10px;
+    }
+
+    .text-center {
+        font-size: 1.5rem;
+    }
+
+    .offer-left,
+    .offer-right {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 23px;
+    }
+
+    .fifth-page {
+        display: none;
+    }
+
+    .footer {
+        padding: 10px;
+    }
+
+}
+
+@media (max-width: 430px) {
+
+    .offer-left,
+    .offer-right {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .second-page h2 {
+        font-size: 1.3rem;
+    }
+
+    .first-slide-left h2 {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .card {
+        padding: 6px;
+        width: 159px;
+    }
+
+    .row1,
+    .row2,
+    .row3 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .fourth-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .first-slide-left h2 {
+        font-size: 26px;
+        text-align: left;
+    }
+
+    .first-slide-left p {
+        font-size: 10px;
+        display: none;
+    }
+
+    .first-slide-left {
+        gap: 5px;
+        padding-left: 10px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        height: 50%;
+        width: 50%;
+        background-size: 100%, 100%;
+        display: none;
+    }
+}

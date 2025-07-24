@@ -15,7 +15,7 @@
     <!-- font-awesome css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
 
 
 
@@ -82,7 +82,7 @@
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
-                        <img src="images/logo.png" href="#" alt="Bootstrap" width="120" height="60">
+                        <img src="images/logo.png" class="logo" href="#" alt="Bootstrap" width="120" height="60">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -120,6 +120,7 @@
                 </div>
             </nav>
         </div>
+
         <!-- main-page -->
         <div class="main-page">
             <div id="carouselExample" class="carousel slide carousel-slide carousel-fade">
@@ -128,8 +129,9 @@
                         <!-- slide-1 -->
                         <div class="first-slide">
                             <div class="first-slide-left" data-aos="fade-up">
-                                <h2>Welcome to the AI <img src="images/classroom.png" alt="classroom" width="250"
-                                        height="70"> </h2>
+                                <h2>Welcome to the <br> AI <img class="classroom" src="images/classroom.png"
+                                        alt="classroom">
+                                </h2>
                                 <p>Empowering the next generation of innovators with cutting-edge technology and
                                     interactive
                                     learning
@@ -182,6 +184,7 @@
             </div>
 
         </div>
+        
         <!-- second-page -->
         <div class="second-page">
             <h2 data-aos="fade-up">Pioneering Next-gen Education
@@ -289,6 +292,79 @@
             </div>
         </div>
 
+        <!-- for smaller-screen -->
+        <div class="fourth-page-sm">
+            <div class="fourth-left">
+                <h2 style="color: white;" data-aos="fade-up">
+                    Why Choose Us
+                    <i class="fa-solid fa-question " style="color: #9E60F7;"></i>
+                </h2>
+            </div>
+            <div class="fourth-right">
+                <div class="row1">
+                    <div class="card" data-aos="flip-left">
+                        <div class="card-left">
+                            <i class="fa-solid fa-pen" style="color: #94b7f5;"></i>
+                        </div>
+                        <div class="card-right">
+                            <h3>Online Tests</h3>
+                            <p class="count" data-target="10000">0</p>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="flip-left">
+                        <div class="card-left">
+                            <i class="fa-solid fa-chalkboard-user" style="color: #74C0FC;"></i>
+                        </div>
+                        <div class="card-right">
+                            <h3>Teachers</h3>
+                            <p class="count" data-target="999">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row2">
+                    <div class="card" data-aos="flip-left">
+                        <div class="card-left">
+                            <i class="fa-solid fa-graduation-cap" style="color: #63E6BE;"></i>
+                        </div>
+                        <div class="card-right">
+                            <h3>Students</h3>
+                            <p class="count" data-target="17000">0</p>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="flip-left">
+                        <div class="card-left">
+                            <i class="fa-regular fa-circle-question" style="color: #c7f8c4;"></i>
+                        </div>
+                        <div class="card-right">
+                            <h3>Questions</h3>
+                            <p class="count" data-target="9199">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row3">
+                    <div class="card" data-aos="flip-left">
+                        <div class="card-left">
+                            <i class="fa-solid fa-laptop-code fa-2xl" style="color: #B197FC;"></i>
+                        </div>
+                        <div class="card-right">
+                            <h3>Lectures</h3>
+                            <p class="count" data-target="1000">0</p>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="flip-left">
+                        <div class="card-left">
+                            <i class="fa-solid fa-chalkboard-user fa-2xl" style="color: #74C0FC;"></i>
+                        </div>
+                        <div class="card-right">
+                            <h3>Videos</h3>
+                            <p class="count" data-target="90000">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <!--what we offer -->
         <section class="offer-section">
             <h2 data-text="What We Offer" class="head-offer" data-aos="fade-up">What We Offer</h2>
@@ -307,6 +383,10 @@
                 </div>
                 <div class="offer-center" data-aos="zoom-out">
                     <img src="images/character.png" alt="Student" />
+                    <dotlottie-wc data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"
+                        src="https://lottie.host/1addf11b-2da7-4ae6-a9f7-9b342401d869/8YtBUTOsm9.lottie"
+                        class="fourth-animation-sm" speed="1" autoplay loop></dotlottie-wc>
+
                 </div>
                 <div class="offer-right">
                     <div class="offer-card purple" data-aos="flip-up">
