@@ -19,7 +19,7 @@ window.addEventListener('load', () => {
 
 const swiper = new Swiper('.swiper', {
     loop: true,
-    slidesPerView: 2,
+    slidesPerView: 1.5,
     centeredSlides: true,
     spaceBetween: 50,
     
@@ -185,21 +185,41 @@ loginTab.addEventListener('click', switchToLogin);
 // number count
 document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll('.count');
-    counters.forEach(counter => {
+
+    const runCounter = (counter) => {
         counter.innerText = '0';
+
         const updateCounter = () => {
             const target = +counter.getAttribute('data-target');
-            const current = +counter.innerText;
-            const increment = target / 200; // Adjust speed here
+            const current = +counter.innerText.replace('+', '');
+            const increment = target / 200;
 
             if (current < target) {
-                counter.innerText = `${Math.ceil(current + increment)}`;
+                counter.innerText = `${Math.ceil(current + increment)}+`;
                 setTimeout(updateCounter, 10);
             } else {
-                counter.innerText = target;
+                counter.innerText = `${target}+`;
             }
         };
+
         updateCounter();
+    };
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                runCounter(entry.target);
+                observer.unobserve(entry.target); // run only once
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    counters.forEach(counter => {
+        observer.observe(counter);
     });
 });
+
+
 

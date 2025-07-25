@@ -7,7 +7,7 @@
 html,
 body {
     font-family: 'Arial', sans-serif;
-    background-color: black;
+    background-color: red;
     color: black;
     line-height: 1.6;
     scroll-behavior: smooth;
@@ -18,6 +18,8 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 20px;
+    align-items: center;
+    background-color: black;
 }
 
 /* navigation bar */
@@ -117,6 +119,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh !important;
+}
+
+.main-page-sm {
+    display: none;
 }
 
 .active-height {
@@ -381,8 +387,8 @@ body {
     color: white;
     background-repeat: no-repeat;
     background-position: center;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 
@@ -649,8 +655,8 @@ body {
     align-items: center;
     background-color: black;
     color: white;
-    padding-top: 50px;
     padding-bottom: 50px;
+    padding-top: 25px;
 }
 
 .fifth-page h2 {
@@ -738,6 +744,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: #9E60F7;
     padding-bottom: 20px;
+    padding-top: 30px;
 }
 
 .marquee-container {
@@ -892,6 +899,83 @@ body {
     }
 }
 
+/* our courses */
+.courses {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    flex-direction: column;
+    padding-bottom: 80px;
+    padding-top: 50px;
+}
+
+.courses h2 {
+    color: white;
+    text-align: center;
+    font-size: 4rem;
+    padding-bottom: 40px;
+}
+
+.course-img {
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.parent2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+}
+
+.plus {
+    font-size: 4rem;
+}
+
+.div11 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.div22 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.div33 {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.div44 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.div55 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.div66 {
+    grid-area: 2 / 3 / 3 / 4;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.glass-card:hover {
+    transform: scale(1.05);
+}
 
 
 /* modal form */
@@ -1159,6 +1243,8 @@ input::placeholder {
 
     .offer-center img {
         display: none;
+        width: 150px;
+        height: auto;
     }
 
     .fourth-animation-sm {
@@ -1297,7 +1383,7 @@ input::placeholder {
     }
 
     .fifth-page h2 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .trophy {
@@ -1330,6 +1416,27 @@ input::placeholder {
     .second-slide-left p {
         font-size: 10px;
         width: 32ch;
+    }
+
+    .course-img {
+        width: 150px;
+        height: auto;
+        border-radius: 0px;
+    }
+
+    .plus {
+        font-size: 2rem;
+    }
+
+    .courses h2 {
+        color: white;
+        text-align: center;
+        font-size: 2rem;
+        padding-bottom: 40px;
+    }
+
+    .courses {
+        padding-top: 0px;
     }
 
 }
@@ -1382,6 +1489,12 @@ input::placeholder {
         padding: 10px;
     }
 
+    .course-img {
+        width: 100px;
+        height: auto;
+        border-radius: 0px;
+    }
+
 }
 
 @media (max-width: 430px) {
@@ -1389,11 +1502,15 @@ input::placeholder {
     .offer-left,
     .offer-right {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+    }
+
+    .main-page {
+        display: none;
     }
 
     .second-page h2 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .first-slide-left h2 {
@@ -1403,7 +1520,7 @@ input::placeholder {
 
     .card {
         padding: 6px;
-        width: 159px;
+        width: 135px;
     }
 
     .row1,
@@ -1412,14 +1529,18 @@ input::placeholder {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        gap: 10px;
+        gap: 15px;
+    }
+
+    .card-right h3 {
+        font-size: 1.1rem;
     }
 
     .fourth-right {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 10px;
+        gap: 15px;
     }
 
     .first-slide-left h2 {
@@ -1443,5 +1564,130 @@ input::placeholder {
         width: 50%;
         background-size: 100%, 100%;
         display: none;
+    }
+
+    .school-card img {
+        width: 30px;
+    }
+
+    .school-card {
+        width: 80px;
+    }
+
+    .main-page {
+        display: none;
+    }
+
+    .main-page-sm {
+        background-image: url("images/Untitled design.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        padding: 20px;
+        color: white;
+        width: 100%;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .main-page-sm h2 {
+        text-align: center;
+        font-size: 1.5rem;
+        padding-bottom: 20px;
+        ;
+    }
+
+    .main-page-sm p {
+        text-align: left;
+        font-size: 0.8rem;
+        padding-top: 25px;
+        padding-bottom: 20px;
+    }
+
+    .ani-sm {
+        width: 200px;
+        height: 200px;
+        align-items: center;
+    }
+
+    .logo {
+        width: 60px;
+        height: 30px;
+    }
+
+    .nav-left {
+        gap: 10px;
+    }
+
+    .navbar {
+        padding: 5px 5px;
+    }
+
+    .second-page {
+        padding-bottom: 50px;
+    }
+
+    .fourth-left h2 {
+        font-size: 1.5rem;
+    }
+
+    .footer-apps img {
+        height: 30px;
+        margin: 5px;
+    }
+
+    .swiper-button-prev:after,
+    .swiper-rtl .swiper-button-next:after {
+        content: 'prev';
+        display: none;
+    }
+
+    .swiper-button-next:after,
+    .swiper-rtl .swiper-button-prev:after {
+        content: 'next';
+        display: none;
+    }
+
+    .second-page p {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    .footer {
+        background: black;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+        font-family: sans-serif;
+    }
+
+    .offer-card p {
+        width: 25ch;
+        display: none;
+    }
+
+    .offer-card {
+        padding: 16px;
+        align-items: center;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
+
+
+    .container {
+        padding: 0px;
+    }
+
+    .course-img {
+        width: 85px;
+        height: auto;
+        border-radius: 0px;
     }
 }

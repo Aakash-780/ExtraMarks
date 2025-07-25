@@ -17,12 +17,9 @@
     <!-- AOS -->
     <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
 
-
-
 </head>
 
 <body>
-
     <!-- container -->
     <div class="container">
 
@@ -184,7 +181,19 @@
             </div>
 
         </div>
-        
+        <!-- main-page-sm -->
+        <div class="main-page-sm" data-aos="fade-up">
+            <h2>Welcome to the AI <img class="classroom" src="images/classroom.png" alt="classroom"></h2>
+            <dotlottie-wc src="https://lottie.host/b4168ed8-6afe-4982-9382-2192202f134d/TUqLYCHRcf.lottie" clas="ani-sm"
+                speed="1" autoplay loop></dotlottie-wc>
+            <p>Empowering the next generation of innovators with cutting-edge technology and
+                interactive
+                learning
+                experiences. Discover, build, and transform your future with us.</p>
+            <button class="btn btn-outline-success fst-btn" type="submit">Book Now</button>
+        </div>
+
+
         <!-- second-page -->
         <div class="second-page">
             <h2 data-aos="fade-up">Pioneering Next-gen Education
@@ -236,7 +245,7 @@
                         </div>
                         <div class="card-right">
                             <h3>Online Tests</h3>
-                            <p class="count" data-target="10000">0</p>
+                            <p class="count" data-target="100000">0</p>
                         </div>
                     </div>
                     <div class="card" data-aos="flip-left">
@@ -245,7 +254,7 @@
                         </div>
                         <div class="card-right">
                             <h3>Teachers</h3>
-                            <p class="count" data-target="999">0</p>
+                            <p class="count" data-target="9999">0</p>
                         </div>
                     </div>
                 </div>
@@ -383,10 +392,12 @@
                 </div>
                 <div class="offer-center" data-aos="zoom-out">
                     <img src="images/character.png" alt="Student" />
-                    <dotlottie-wc data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"
+                    <!-- <dotlottie-wc data-aos="fade-up" data-aos-offset="300" data-aos-easing="ease-in-sine"
                         src="https://lottie.host/1addf11b-2da7-4ae6-a9f7-9b342401d869/8YtBUTOsm9.lottie"
-                        class="fourth-animation-sm" speed="1" autoplay loop></dotlottie-wc>
-
+                        class="fourth-animation-sm" speed="1" autoplay loop></dotlottie-wc> -->
+                    <dotlottie-wc src="https://lottie.host/1addf11b-2da7-4ae6-a9f7-9b342401d869/8YtBUTOsm9.lottie"
+                        class="fourth-animation-sm" style="width: 300px;height: 300px" speed="1" autoplay
+                        loop></dotlottie-wc>
                 </div>
                 <div class="offer-right">
                     <div class="offer-card purple" data-aos="flip-up">
@@ -403,6 +414,23 @@
                 </div>
             </div>
         </section>
+
+        <!-- courses -->
+        <div class="courses">
+            <h2>Explore Our Courses <i class="fa-solid fa-graduation-cap" style="color: #B197FC;"></i></h2>
+            <div class="parent2">
+                <div class="div11 glass-card"><img class="course-img" src="images/course.png"></div>
+                <div class="div22 glass-card"><img class="course-img" src="images/course.png"></div>
+                <div class="div33 glass-card"><img class="course-img" src="images/course.png"></div>
+                <div class="div44 glass-card"><img class="course-img" src="images/course.png"></div>
+                <div class="div55 glass-card"><img class="course-img" src="images/course.png"></div>
+                <div class="div66 glass-card">
+                    <a href="#" style="text-decoration: none;">
+                        <i class="fa-solid fa-plus plus" style="color: #B197FC"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
 
         <!--sponsors -->
         <div class="sponsors">
@@ -663,7 +691,6 @@
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
     <!-- Firebase Auth -->
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
-
 
 
 </body>
