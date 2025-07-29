@@ -22,7 +22,7 @@ const swiper = new Swiper('.swiper', {
     slidesPerView: 1.5,
     centeredSlides: true,
     spaceBetween: 50,
-    
+
     effect: 'coverflow',
     coverflowEffect: {
         rotate: 0,
@@ -31,20 +31,20 @@ const swiper = new Swiper('.swiper', {
         modifier: 1,
         slideShadows: true,
     },
-    
+
     autoplay: {
         delay: 2500,
         disableOnInteraction: false,
     },
-    
+
     grabCursor: true,
-    
+
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
 })
-;
+    ;
 
 
 
@@ -223,3 +223,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+    const question = item.querySelector(".faq-question");
+
+    question.addEventListener("click", () => {
+        item.classList.toggle("active");
+    });
+});

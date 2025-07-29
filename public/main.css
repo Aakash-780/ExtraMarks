@@ -7,7 +7,7 @@
 html,
 body {
     font-family: 'Arial', sans-serif;
-    background-color: red;
+    background-color: black;
     color: black;
     line-height: 1.6;
     scroll-behavior: smooth;
@@ -208,10 +208,10 @@ body {
 }
 
 .fst-btn {
-    width: 200px;
-    height: 80px;
+    width: 187px;
+    height: 71px;
     font-weight: bolder;
-    font-size: 25px;
+    font-size: 19px;
 }
 
 .first-slide-left p {
@@ -308,6 +308,10 @@ body {
 .logo2 {
     width: 400px;
     height: 200px;
+}
+
+.fa-plus {
+    font-size: 3rem;
 }
 
 .third-slide-left {
@@ -1157,6 +1161,61 @@ input::placeholder {
     align-items: center;
 }
 
+/* contact modal */
+#contact-form input,
+#contact-form select,
+#contact-form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #2c2c2e;
+}
+
+#contact-form input::placeholder,
+#contact-form select::placeholder,
+#contact-form textarea::placeholder {
+    color: #ffffff;
+    opacity: 1;
+    /* Ensures full white opacity */
+}
+
+#contact-form select {
+    color: white;
+    background-color: #2c2c2e;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    appearance: none;
+    /* optional: removes default arrow styling */
+}
+
+
+#contact-form select option[disabled] {
+    color: #aaa;
+}
+
+#contact-form textarea {
+    resize: none;
+}
+
+.submit-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
 @media (max-width: 768px) {
 
     .div1 {
@@ -1439,6 +1498,39 @@ input::placeholder {
         padding-top: 0px;
     }
 
+    .snd-btn {
+        width: 122px;
+        height: 40px;
+        align-items: center;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    .second-slide-left p {
+        font-size: 15px;
+        width: 19ch;
+    }
+
+    .first-slide-left p {
+        font-size: 10px;
+        width: 30ch;
+    }
+
+    .third-slide-image {
+        width: 300px;
+        height: 300px;
+    }
+
+    .third-slide-left p {
+        font-size: 20px;
+    }
+
+    .third-slide-left {
+        gap: 20px;
+    }
+
+
+
 }
 
 @media (max-width: 565px) {
@@ -1494,6 +1586,21 @@ input::placeholder {
         height: auto;
         border-radius: 0px;
     }
+
+    .slide-image {
+        width: 300px;
+        height: 200px;
+    }
+
+    .third-slide-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .third-slide-left p {
+        font-size: 17px;
+    }
+    
 
 }
 

@@ -15,13 +15,48 @@
     <!-- font-awesome css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <!-- AOS -->
-    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 
 <body>
     <!-- container -->
     <div class="container">
+
+        <!-- Contact Modal -->
+        <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-center">
+                <div class="modal-content content-background cardform">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contactModalLabel">📞 Contact Us or Dial Us at
+                            <strong>799XXX432</strong>
+                        </h5>
+                        <button type="button" class="btn-close close-button" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="contact-form">
+                            <input type="tel" id="contact-mobile" placeholder="Mobile Number" required />
+
+                            <input type="text" id="contact-name" placeholder="Your Name" required />
+
+                            <select id="contact-role" required>
+                                <option value="" disabled selected hidden>Select Role</option>
+                                <option value="Student">Student</option>
+                                <option value="Teacher">Teacher</option>
+                            </select>
+
+
+                            <input type="text" id="contact-city" placeholder="Your City" required />
+
+                            <textarea id="contact-message" rows="4" placeholder="Your Message" required></textarea>
+
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Modal signup login -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -78,9 +113,10 @@
         <div class="navigation" data-aos="fade-down">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img src="images/logo.png" class="logo" href="#" alt="Bootstrap" width="120" height="60">
+                    <a class="navbar-brand" href="main.html">
+                        <img src="images/logo.png" class="logo" alt="Bootstrap Logo" width="120" height="60">
                     </a>
+
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -89,16 +125,17 @@
                     <div class="collapse navbar-collapse nav-bar-gap" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-left">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Online Course</a>
+                                <a class="nav-link active" aria-current="page" href="course.html">Online Course</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Online Test</a>
+                                <a class="nav-link active" aria-current="page" href="test.html">Online Test</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Contact Us</a>
+                                <a class="nav-link active" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#contactModal" aria-current="page" href="#">Contact Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">About Us</a>
+                                <a class="nav-link active" aria-current="page" href="about.html">About Us</a>
                             </li>
 
                         </ul>
@@ -133,7 +170,8 @@
                                     interactive
                                     learning
                                     experiences. Discover, build, and transform your future with us.</p>
-                                <button class="btn btn-outline-success fst-btn" type="submit">Book Now</button>
+                                <button class="btn btn-outline-success fst-btn" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">Book Now</button>
                             </div>
                             <div class="first-slide-right" data-aos="fade-up">
                                 <dotlottie-wc class="slide-animation"
@@ -148,7 +186,8 @@
                             <div class="second-slide-left">
                                 <img class="logo2" src="images/logo2.png">
                                 <p>Learn What You Want, When You Want, Where You Want</p>
-                                <button type="button" class="btn btn-warning snd-btn">Book Now</button>
+                                <button type="button" class="btn btn-warning snd-btn" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">Book Now</button>
                             </div>
                             <div class="first-slide-right">
                                 <img class="slide-image" src="images/smartclass.png">
@@ -160,7 +199,8 @@
                             <div class="third-slide-left">
                                 <img class="logo2" src="images/logo2.png">
                                 <p>A Platform Where Technology Meets Innovation</p>
-                                <button type="button" class="btn btn-warning snd-btn">Book Now</button>
+                                <button type="button" class="btn btn-warning snd-btn" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">Book Now</button>
                             </div>
                             <div class="third-slide-right">
                                 <img class="third-slide-image" src="images/learningboy.png">
@@ -181,6 +221,7 @@
             </div>
 
         </div>
+
         <!-- main-page-sm -->
         <div class="main-page-sm" data-aos="fade-up">
             <h2>Welcome to the AI <img class="classroom" src="images/classroom.png" alt="classroom"></h2>
@@ -419,14 +460,19 @@
         <div class="courses">
             <h2>Explore Our Courses <i class="fa-solid fa-graduation-cap" style="color: #B197FC;"></i></h2>
             <div class="parent2">
-                <div class="div11 glass-card"><img class="course-img" src="images/course.png"></div>
-                <div class="div22 glass-card"><img class="course-img" src="images/course.png"></div>
-                <div class="div33 glass-card"><img class="course-img" src="images/course.png"></div>
-                <div class="div44 glass-card"><img class="course-img" src="images/course.png"></div>
-                <div class="div55 glass-card"><img class="course-img" src="images/course.png"></div>
+                <div class="div11 glass-card" data-bs-toggle="modal" data-bs-target="#exampleModal"><img
+                        class="course-img" src="images/course.png"></div>
+                <div class="div22 glass-card" data-bs-toggle="modal" data-bs-target="#exampleModal"><img
+                        class="course-img" src="images/course.png"></div>
+                <div class="div33 glass-card" data-bs-toggle="modal" data-bs-target="#exampleModal"><img
+                        class="course-img" src="images/course.png"></div>
+                <div class="div44 glass-card" data-bs-toggle="modal" data-bs-target="#exampleModal"><img
+                        class="course-img" src="images/course.png"></div>
+                <div class="div55 glass-card" data-bs-toggle="modal" data-bs-target="#exampleModal"><img
+                        class="course-img" src="images/course.png"></div>
                 <div class="div66 glass-card">
-                    <a href="#" style="text-decoration: none;">
-                        <i class="fa-solid fa-plus plus" style="color: #B197FC"></i>
+                    <a href="course.html" style="text-decoration: none;">
+                        <i class="fa-solid fa-plus" style="color: #B197FC"></i>
                     </a>
                 </div>
             </div>
@@ -691,7 +737,6 @@
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
     <!-- Firebase Auth -->
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
-
 
 </body>
 
